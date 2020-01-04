@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tt</groupId>
+    <artifactId>com.tt.demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.bj58.spat</groupId>
+            <artifactId>com.bj58.spat.scf.server</artifactId>
+            <version>4.1.40</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bj58.spat</groupId>
+            <artifactId>com.bj58.spat.scf.serializer</artifactId>
+            <version>1.8.23</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bj58.spat</groupId>
+            <artifactId>com.bj58.spat.scf.client</artifactId>
+            <version>2.2.41</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bj58.spat</groupId>
+            <artifactId>com.bj58.spat.scf.protocol</artifactId>
+            <version>2.0.24</version>
+        </dependency>
+        <!--dependency>
+            <groupId>com.bj58.spat</groupId>
+            <artifactId>com.bj58.spat.scf</artifactId>
+            <version>4.1.29</version>
+            <type>pom</type>
+        </dependency-->
+
+        <dependency>
+            <groupId>com.bj58.srvmgr</groupId>
+            <artifactId>srvmgr-collector-contract</artifactId>
+            <version>1.0.17</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.1</version>
+            <configuration>
+                <attach>true</attach>
+            </configuration>
+            <executions>
+            <execution>
+            <phase>compile</phase>
+            <goals>
+                <goal>jar</goal>
+            </goals>
+            </execution>
+            </executions>
+            </plugin-->
+            <plugin>
+                <groupId>com.bj58.spat</groupId>
+                <artifactId>scf-maven-plugin</artifactId>
+                <version>0.0.13</version>
+                <configuration>
+                    <!--scf服务目录-->
+                    <scfhome>D:\software\maven-repository\SCF_4.1.21\scf</scfhome>
+                    <!--scf服务名字，即在../ service/deploy目录下相应的名-->
+                    <scfname>ttdemoserver</scfname>
+                    <targetJarDirectory></targetJarDirectory>
+                    <includejars>*</includejars>
+                    <configFolder>\src\main\resources</configFolder>
+                    <includejars>*</includejars>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
